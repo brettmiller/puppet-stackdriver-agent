@@ -3,3 +3,8 @@ AUTOGENERATE_COLLECTD_CONFIG="yes"
 
 # your stackdriver api key
 STACKDRIVER_API_KEY="<%= @apikey %>"
+
+# Write to Google Cloud Monitoring API if on GCE instance 
+<% if $facts['gce']['instance']['attributes']['role'] != undef -%>
+DETECT_GCM="yes"
+<% end %>
