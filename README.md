@@ -37,21 +37,7 @@ The stackdriver class includes the client:
 include stackdriver
 ```
 
-You must specify your Stackdriver API key:
-
-* Using Hiera (recommended)
-
-```yaml
-stackdriver::apikey: 'OMGBECKYLOOKATHERBUTTITSJUSTSOBIG'
-```
-
-* Using Puppet Code
-
-```puppet
-class { 'stackdriver':
-    apikey => 'OMGBECKYLOOKATHERBUTTITSJUSTSOBIG',
-}
-```
+If you're installing on a Compute Engine instance that was created without default credentials, or if you are installing the agent on an Amazon EC2 instance you will need a service accout with required privileges and private-key credentials. The private-key credentials will need to be copied to your VM instance. The steps for this are outlined in the Stackdriver [documentation](https://cloud.google.com/monitoring/agent/install-agent#private_key_authorization).
 
 ## Plugins
 
