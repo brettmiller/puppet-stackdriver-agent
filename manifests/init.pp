@@ -7,10 +7,6 @@
 # === Parameters
 # ---
 #
-# [*apikey*]
-# - Default - NONE (REQUIRED)
-# - Stackdriver API key
-#
 # [*svc*]
 # - Default - Depends on $::osfamily
 # - Stackdriver Agent service name
@@ -43,7 +39,6 @@ class stackdriver (
 
 ) {
 
-  validate_string ( $apikey )
   validate_array  ( $svc    )
 
   # Runtime class definitions

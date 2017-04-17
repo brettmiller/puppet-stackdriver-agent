@@ -28,10 +28,6 @@
 # - Default - none
 # - Hash to create /etc/sysconfig/jmxtrans override variables
 #
-# [*apikey*]
-# - Default - retrieve from hiera stackdriver::apikey
-# - Stackdriver API Key
-#
 # === Usage
 # ---
 #
@@ -54,7 +50,6 @@ class stackdriver::plugin::tomcat(
   $port      = '9991',
   $path      = '/mnt/jmxtrans',
   $sysconfig = {},
-  $apikey    = hiera('stackdriver::apikey'),
 ) {
 
   Class['stackdriver'] -> Class[$name]
