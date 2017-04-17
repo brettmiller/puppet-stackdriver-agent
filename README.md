@@ -37,7 +37,7 @@ The stackdriver class includes the client:
 include stackdriver
 ```
 
-If you're installing on a Compute Engine instance that was created without default credentials, or if you are installing the agent on an Amazon EC2 instance you will need a service accout with required privileges and private-key credentials. The private-key credentials will need to be copied to your VM instance. The steps for this are outlined in the Stackdriver [documentation](https://cloud.google.com/monitoring/agent/install-agent#private_key_authorization) and are currently beyond the scope of the module.
+If you're installing on a Compute Engine instance that was created without default credentials, or if you are installing the agent on an Amazon EC2 instance you will need a service account with required privileges and private-key credentials. The private-key credentials will need to be copied to your VM instance. The steps for this are outlined in the Stackdriver [documentation](https://cloud.google.com/monitoring/agent/install-agent#private_key_authorization) and are currently beyond the scope of the module.
 
 ## Plugins
 
