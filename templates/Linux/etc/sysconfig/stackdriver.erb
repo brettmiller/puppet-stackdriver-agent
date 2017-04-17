@@ -1,8 +1,10 @@
 # whether or not to autogenerate the stackdriver collectd config file
 AUTOGENERATE_COLLECTD_CONFIG="yes"
 
-# your stackdriver api key
+# your stackdriver api key (don't use in GCE)
+<% if @virtual != 'gce' -%>
 STACKDRIVER_API_KEY="<%= @apikey %>"
+<% end %>
 
 # Write to Google Cloud Monitoring API if on GCE instance 
 <% if @virtual = 'gce' -%>
