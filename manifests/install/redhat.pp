@@ -31,7 +31,7 @@
 #
 class stackdriver::install::redhat(
 
-  $major_version = $facts["os"]["release"]["major"]
+  $major_version = $facts["os"]["release"]["major"],
   $pkg    = [ 'stackdriver-agent' ],
   $ensure = 'present',
 

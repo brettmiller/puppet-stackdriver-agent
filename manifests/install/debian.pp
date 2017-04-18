@@ -21,7 +21,7 @@
 # [*aptkey*]
 # - Default: (hash)
 #  {
-#    'key'        => 'B10FDCDCEC088467D0069F423C6E15887B190BD2',
+#    'id'        => 'B10FDCDCEC088467D0069F423C6E15887B190BD2',
 #    'key_server' => 'subkeys.pgp.net',
 #  }
 # - Stackdriver APT repository authentication key
@@ -38,13 +38,13 @@
 #
 class stackdriver::install::debian(
 
-  $distcodename = $facts["os"]["distro"]["codename"]
+  $distcodename = $facts["os"]["distro"]["codename"],
   $pkg    = 'stackdriver-agent',
   $ensure = 'present',
 
   $aptkey = {
-    'key'         => 'B10FDCDCEC088467D0069F423C6E15887B190BD2',
-    'key_source'  => 'https://app.stackdriver.com/RPM-GPG-KEY-stackdriver',
+    'id'         => 'B10FDCDCEC088467D0069F423C6E15887B190BD2',
+    'source'  => 'https://app.stackdriver.com/RPM-GPG-KEY-stackdriver',
   },
 
   $aptsource = {
