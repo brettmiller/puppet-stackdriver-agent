@@ -31,11 +31,12 @@
 #
 class stackdriver::install::redhat(
 
+  $major_version = $facts["os"]["release"]["major"]
   $pkg    = [ 'stackdriver-agent' ],
   $ensure = 'present',
 
   $repo = {
-    'baseurl'   => 'http://repo.stackdriver.com/repo/el6/$basearch/',
+    'baseurl'   => 'http://repo.stackdriver.com/repo/el$major_version/$basearch/',
     'gpgkey'    => 'https://www.stackdriver.com/RPM-GPG-KEY-stackdriver',
     'descr'     => 'stackdriver',
     'enabled'   => 1,
