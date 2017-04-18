@@ -38,6 +38,7 @@
 #
 class stackdriver::install::debian(
 
+  $distcodename = $facts["os"]["distro"]["codename"]
   $pkg    = 'stackdriver-agent',
   $ensure = 'present',
 
@@ -48,7 +49,7 @@ class stackdriver::install::debian(
 
   $aptsource = {
     'location'  => 'http://repo.stackdriver.com/apt',
-    'release'   => $::lsbdistcodename,
+    'release'   => $distcodename,
     'repos'     => 'main',
     'key'       => 'B10FDCDCEC088467D0069F423C6E15887B190BD2',
   },
